@@ -1,0 +1,14 @@
+[project]
+name = "hireflow"
+version = "0.1.0"
+description = "AI-powered multi-agent hiring pipeline built on Band"
+requires-python = ">=3.11"
+dependencies = [
+    "band-sdk[langgraph]",
+    "langchain-openai",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
