@@ -1,10 +1,11 @@
 # HireFlow — AI Hiring Intelligence
 
-> A multi-agent hiring pipeline built on [Band](https://band.ai) for the Band of Agents Hackathon.
+> A multi-agent hiring pipeline built on [Band](https://band.ai) for the Band of Agents Hackathon — Track 1: Internal Enterprise Workflows
+> Partners used: AI/ML API (primary reasoning)
 
-HireFlow turns a raw job description and a pile of resumes into a structured hiring
+**HireFlow turns a raw job description and a pile of resumes into a structured hiring
 recommendation — through a relay of 4 specialized AI agents that collaborate in a
-Band chat room.
+Band chat room.**
 
 ---
 
@@ -135,6 +136,23 @@ Candidate 2 — Bob Malik
 6. Receive your hiring report from @Decision Summarizer.
 
 ---
+## Project Layout
+```
+agents/      analyzer + planner/screener/summarizer/config
+web/         the Hireflow dashboard 
+```
+---
+
+## Partner technology (both prizes)
+
+- **AI/ML API** — primary reasoning/orchestration gateway for Analyzer, Planner, Screener, Summarizer
+  (`HireFlow/run_all.py::reason`, OpenAI-compatible). → *Best Use of AI/ML API*.
+- **Featherless AI** — serverless **open-source** model inference for the Compliance agent's
+  policy-classification path (`llm.py::classify`). → *Best Use of Featherless AI*.
+
+Provider usage is tallied per call (`/api/health` → `partners`) as prize evidence.
+
+---
 
 ## Tech Stack
 
@@ -142,7 +160,7 @@ Candidate 2 — Bob Malik
 |-------|-----------|
 | Agent coordination | [Band](https://band.ai) |
 | Agent framework | LangGraph via Band SDK |
-| LLM | Meta Llama 3.1 70B via [AI/ML API](https://aimlapi.com) |
+| LLM | GPT-5o via [AI/ML API](https://aimlapi.com) |
 | Language | Python 3.11+ |
 
 ---
